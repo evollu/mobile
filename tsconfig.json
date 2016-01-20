@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
-    "allowNonTsExtensions": true,
     "isolatedModules": true,
-    "noLib": true,
     "target": "es5",
     "module": "commonjs",
     "noEmitOnError": false,
