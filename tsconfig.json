@@ -7,9 +7,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "rootDir": ".",
-    "sourceMap": false,
-    "inlineSourceMap": false,
-    "inlineSources": false
+    "sourceMap": true
   },
   "exclude": [
     "node_modules"
