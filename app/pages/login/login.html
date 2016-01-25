@@ -1,0 +1,27 @@
+<ion-navbar *navbar>
+    <ion-title>Login</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <form [ngFormModel]="loginForm" (submit)="login()">
+
+        <ion-list>
+
+            <ion-input stacked-label>
+                <ion-label>Username</ion-label>
+                <input type="text" ngControl="username">
+            </ion-input>
+            <div ngControlGroup="passwordRetry">
+                <ion-input stacked-label>
+                    <ion-label>Password</ion-label>
+                    <input type="password" ngControl="password">
+                </ion-input>
+            </div>
+
+        </ion-list>
+
+        <div padding>
+            <button primary block type="submit">Sign In</button>
+        </div>
+    </form>
+</ion-content>

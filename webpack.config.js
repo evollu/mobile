@@ -6,6 +6,7 @@ module.exports = {
     path.normalize('es6-shim/es6-shim.min'),
     'reflect-metadata',
     'web-animations.min',
+    path.normalize('lodash'),
     path.normalize('zone.js/dist/zone-microtask'),
     path.resolve('app/app')
   ],
@@ -46,5 +47,7 @@ module.exports = {
     },
     extensions: ['', '.js', '.ts']
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  watch: true,
+  cache: false
 };

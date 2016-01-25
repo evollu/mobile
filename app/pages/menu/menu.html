@@ -1,0 +1,33 @@
+<ion-navbar *navbar>
+    <ion-title>Menu</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <ion-searchbar [(ngModel)]="searchQuery" placeholder="What would you like?"></ion-searchbar>
+    <ion-list *ngFor="#group of menu">
+        <ion-list-header>
+            {{group.group}}
+        </ion-list-header>
+        <ion-item-sliding *ngFor="#item of group.items | menuFilter: searchQuery">
+
+            <ion-item>
+                <ion-thumbnail item-left>
+                    <img [src]="item.img">
+                </ion-thumbnail>
+                <h2>{{item.title}}</h2>
+                <p>{{item.description}}</p>
+                <div item-right>
+                    <h2>${{item.price}} <span *ngIf="item.count">x {{item.count}}</span></h2>
+                </div>
+            </ion-item>
+            <ion-item-options>
+                <button (click)=removeItem(item)>
+                    <ion-icon name="remove"></ion-icon>
+                </button>
+                <button (click)=addItem(item)>
+                    <ion-icon name="add"></ion-icon>
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

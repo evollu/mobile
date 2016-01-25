@@ -1,0 +1,30 @@
+<ion-navbar *navbar>
+    <ion-title>Checkout</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <form [ngFormModel]="form" (submit)="form.valid && checkout()">
+        <ion-list>
+
+            <ion-input stacked-label>
+                <ion-label [class.danger]="!form.controls.number.valid && form.controls.number.touched">Card Number</ion-label>
+                <input type="text" ngControl="number">
+            </ion-input>
+            <ion-row>
+                <ion-input stacked-label>
+                    <ion-label [class.danger]="!form.controls.exp.valid && form.controls.exp.touched">MM/YY</ion-label>
+                    <input type="text" ngControl="exp">
+                </ion-input>
+                <ion-input stacked-label>
+                    <ion-label [class.danger]="!form.controls.cvc.valid && form.controls.cvc.touched">CVC</ion-label>
+                    <input type="number" ngControl="cvc">
+                </ion-input>
+            </ion-row>
+
+        </ion-list>
+
+        <div padding>
+            <button primary block type="submit">Checkout</button>
+        </div>
+    </form>
+</ion-content>
