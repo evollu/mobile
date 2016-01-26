@@ -28,7 +28,7 @@ export class CartPage {
         this.nav = nav;
         this.items = cartService.list();
         this.total = this.calTotal();
-        cartService.cartChange().subscribe(list => {
+        cartService.cartChange.subscribe(list => {
             this.items = list;
             this.total = this.calTotal();
         });

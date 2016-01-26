@@ -3,11 +3,11 @@ import {Injectable, EventEmitter} from 'angular2/core';
 @Injectable()
 export class CartService {
     private cart: any;
-    private change: EventEmitter<any[]>;
+    public cartChange: EventEmitter<any[]>;
 
     constructor() {
         this.cart = {};
-        this.change = new EventEmitter<any[]>();
+        this.cartChange = new EventEmitter<any[]>();
     }
 
     add(item) {
@@ -17,7 +17,7 @@ export class CartService {
             this.cart[item.id] = item;
             this.cart[item.id].count = 1;
         }
-        this.change.emit(this.list());
+        this.cartChange.emit(this.list());
     }
 
     remove(item) {
@@ -27,12 +27,12 @@ export class CartService {
                 delete this.cart[item.id];
             }
         }
-        this.change.emit(this.list());
+        this.cartChange.emit(this.list());
     }
     
     clear(){
         this.cart = {};
-        this.change.emit([]);
+        this.cartChange.emit([]);
     }
     
     count(id){
@@ -42,10 +42,6 @@ export class CartService {
     list(){
         var list = Object.keys(this.cart).map(key => this.cart[key]);
         return _.sortBy(list, 'title');
-    }
-    
-    cartChange(){
-        return this.change;
     }
    
 }
