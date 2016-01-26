@@ -3,14 +3,14 @@
 </ion-navbar>
 
 <ion-content>
-    <ion-searchbar [(ngModel)]="searchQuery" placeholder="What would you like?"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchQuery" placeholder="What would you like today?"></ion-searchbar>
     <ion-list *ngFor="#group of menu">
         <ion-list-header>
             {{group.group}}
         </ion-list-header>
         <ion-item-sliding *ngFor="#item of group.items | menuFilter: searchQuery">
 
-            <ion-item>
+            <button ion-item>
                 <ion-thumbnail item-left>
                     <img [src]="item.img">
                 </ion-thumbnail>
@@ -19,7 +19,7 @@
                 <div item-right>
                     <h2>${{item.price}} <span *ngIf="item.count">x {{item.count}}</span></h2>
                 </div>
-            </ion-item>
+            </button>
             <ion-item-options>
                 <button (click)=removeItem(item)>
                     <ion-icon name="remove"></ion-icon>

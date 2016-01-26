@@ -15,6 +15,7 @@ export class HistoryPage {
         this.nav = nav;
         this.items = [
             {
+                id: '4123213123',
                 date: new Date('2016-01-01T11:00:00'),
                 total: 100,
                 status: 'Preparing',
@@ -35,6 +36,7 @@ export class HistoryPage {
                         count: 6
                     }]
             }, {
+                id: '123321123',
                 date: new Date('2015-05-05T16:03:00'),
                 total: 10,
                 status: 'Delivered',
