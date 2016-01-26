@@ -1,5 +1,5 @@
 import {App, Platform, Config, IonicApp} from 'ionic-framework/ionic';
-import {TabsPage} from './pages/tabs/tabs';
+import {IntroPage} from './pages/intro/intro';
 import {CartService} from './pages/cart/cartService';
 import {MenuService} from './pages/menu/menuService';
 
@@ -13,11 +13,11 @@ import {MenuService} from './pages/menu/menuService';
 })
 export class MyApp {
     app: IonicApp;
-    tabsPage;
+    root;
 
     constructor(platform: Platform, ionicApp: IonicApp) {
         this.app = ionicApp;
-        this.tabsPage = TabsPage;
+        this.root = IntroPage;
 
         platform.ready().then(() => {
             // Do any necessary cordova or native calls here now that the platform is ready
