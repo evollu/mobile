@@ -3,7 +3,10 @@
 </ion-navbar>
 
 <ion-content>
-    <ion-list>
+    <div *ngIf="!items.length" class="swiper-slide">
+        <h2>Your cart is empty</h2>
+    </div>
+    <ion-list *ngIf="items.length">
         <ion-item-sliding *ngFor="#item of items">
             <ion-item>
                 <ion-thumbnail item-left>
