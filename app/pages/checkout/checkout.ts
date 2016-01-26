@@ -11,6 +11,7 @@ export class CheckoutPage {
     nav: NavController;
     cart: CartService;
     form: ControlGroup;
+    loading: boolean;
 
     constructor(formBuilder: FormBuilder, nav: NavController, cart: CartService) {
         this.nav = nav;
@@ -23,6 +24,10 @@ export class CheckoutPage {
     }
 
     checkout() {
+        if (this.loading) {
+            return;
+        }
+        this.loading = true;
         var exp = this.form.value.exp.split('/');
         var token = Stripe.createToken({
             number: this.form.value.number,
@@ -47,6 +52,7 @@ export class CheckoutPage {
                 this.cart.clear();
                 this.nav.popToRoot();
             }
+            this.loading = false;
         });
     }
 }
