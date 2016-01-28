@@ -18,7 +18,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.(js|ts)$/,
+        test: /\.ts$/,
         loader: 'awesome-typescript',
         query: {
           doTypeCheck: false,
@@ -47,7 +47,7 @@ module.exports = {
     },
     extensions: ['', '.js', '.ts']
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   watch: true,
   cache: false
 };
