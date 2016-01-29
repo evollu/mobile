@@ -53,7 +53,7 @@ export class HistoryPage {
     }
 
     showDetail(item) {
-        this.nav.push(HistoryDetailPage, { items: item.items }, {}, null);
+        this.nav.push(HistoryDetailPage, { items: item.items });
     }
 
 }

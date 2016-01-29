@@ -49,6 +49,6 @@ export class CartPage {
     }
 
     checkout() {
-        this.nav.push(CheckoutPage, {}, {}, null);
+        this.nav.push(CheckoutPage);
     }
 }

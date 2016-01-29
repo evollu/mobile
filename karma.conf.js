@@ -4,11 +4,11 @@ module.exports = function (config) {
     config.set({
         browsers: ['Chrome'],
         files: [
-            './testIndex.js'
+            './test.bundle.js'
         ],
         frameworks: ['jasmine'],
         preprocessors: {
-            './testIndex.js': ['webpack', 'sourcemap'],
+            './test.bundle.js': ['webpack', 'sourcemap'],
         },
         reporters: ['progress', 'coverage'],
         webpack: require('./webpack.config.js'),
